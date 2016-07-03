@@ -1,0 +1,19 @@
+> # Analyse other attributes of the data
+> # summary of male versus female
+> summary(train$Sex)
+   Length     Class      Mode 
+      891 character character 
+
+> # proportion of male versus female that survived
+> prop.table(table(train$Sex, train$Survived))
+        
+                  0          1
+  female 0.09090909 0.26150393
+  male   0.52525253 0.12233446
+
+> # seperating group, row based proportions 
+> prop.table(table(train$Sex, train$Survived),1)
+        
+                 0         1
+  female 0.2579618 0.7420382
+  male   0.8110919 0.1889081
