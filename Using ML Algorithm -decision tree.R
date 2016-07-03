@@ -10,3 +10,6 @@ fit <- rpart(Survived ~ Pclass + Sex + Age + SibSp + Parch + Fare + Embarked,
 
 # plot the output
 plot(fit)
+
+text(fit)
+
