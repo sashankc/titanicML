@@ -1,0 +1,32 @@
+> # Analysis based on Fare and gender, assuming that the first class passangers got a preference to get on the lifeboats
+> # Create fare bins less tha .... [TRUNCATED] 
+
+> train$Fare2[train$Fare < 30 & train$Fare >= 20] <- '20-30'
+
+> train$Fare2[train$Fare < 20 & train$Fare >= 10] <- '10-20'
+
+> train$Fare2[train$Fare < 10] <- '<10'
+
+> # run aggregating based on fare and gender
+> aggregate(Survived ~ Fare2 + Pclass + Sex, data=train, FUN=function(x) {sum(x)/length(x)})
+   Fare2 Pclass    Sex  Survived
+1  20-30      1 female 0.8333333
+2    30+      1 female 0.9772727
+3  10-20      2 female 0.9142857
+4  20-30      2 female 0.9000000
+5    30+      2 female 1.0000000
+6    <10      3 female 0.5937500
+7  10-20      3 female 0.5813953
+8  20-30      3 female 0.3333333
+9    30+      3 female 0.1250000
+10   <10      1   male 0.0000000
+11 20-30      1   male 0.4000000
+12   30+      1   male 0.3837209
+13   <10      2   male 0.0000000
+14 10-20      2   male 0.1587302
+15 20-30      2   male 0.1600000
+16   30+      2   male 0.2142857
+17   <10      3   male 0.1115385
+18 10-20      3   male 0.2368421
+19 20-30      3   male 0.1250000
+20   30+      3   male 0.2400000
