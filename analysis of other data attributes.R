@@ -1,4 +1,5 @@
-# Analyse other attributes of the data
+# Analyse of the data based on gender of the passanger
+
 # summary of male versus female
 summary(train$Sex)
 
