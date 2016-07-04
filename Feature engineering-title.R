@@ -1,4 +1,4 @@
-#Feature Engineering
+#Feature Engineering - Name Title
 # This means chopping, and combining different attributes to squeeze more value from the data.
 
 # Inpect the name titles 
