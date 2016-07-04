@@ -16,3 +16,10 @@ combi$FamilyID[combi$FamilySize <= 2] <- 'Small'
 # observe the result
 table(combi$FamilyID)
 
+famIDs <- data.frame(table(combi$FamilyID))
+
+famIDs <- famIDs[famIDs$Freq <= 2,]
+
+combi$FamilyID[combi$FamilyID %in% famIDs$Var1] <- 'Small'
+combi$FamilyID <- factor(combi$FamilyID)
+
