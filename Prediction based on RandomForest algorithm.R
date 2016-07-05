@@ -37,4 +37,4 @@ fit <- randomForest(as.factor(Survived) ~ Pclass + Sex + Age + SibSp + Parch + F
                     data=train, 
                     importance=TRUE, 
                     ntree=2000)
-
+Prediction <- predict(fit, test)
